@@ -9,11 +9,17 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import f1_score
 import os
-from pathlib import Path
 
 log = logging.getLogger(__name__)
 
 root = os.getcwd()
+
+class_mapping = {
+    0: 'No Sleep Apnea',
+    1: 'Mild Sleep Apnea',
+    2: 'Moderate Sleep Apnea',
+    3: 'Severe Sleep Apnea'
+}
 
 def data_preprocessing(data, features, target):
     """Normalize the features, drop nan, categorize the target, and split on test/train.
@@ -54,6 +60,7 @@ def classify(cfg: DictConfig) -> None:
         cfg (DictConfig): pass the desired dataset, model, features, and target from config.yaml 
         Example: python my_app.py --multirun dataset=shhs1 model=logistic_regression,svc target=ahi_a0h3a,ahi_a0h4
     """
+    seed = 42
     dataset_path = os.path.join(root, cfg.dataset.path)
     dataset_name = cfg.dataset.name
     model_name = cfg.model.name
@@ -70,18 +77,27 @@ def classify(cfg: DictConfig) -> None:
     # Train model
     if model_name == "logistic_regression":
         log.info("Training logistic regression model")
-        model = LogisticRegression()
+        model = LogisticRegression(random_state=seed, **cfg.model.params)
     elif model_name == 'random_forest':
         log.info("Training random forest model")
-        model = RandomForestClassifier()
+        model = RandomForestClassifier(random_state=seed, **cfg.model.params)
     elif model_name == 'svc':
         log.info("Training svc model")
-        model = SVC()
+        model = SVC(random_state=seed, **cfg.model.params)
 
     model.fit(X_train, y_train)
 
+    predictions = model.predict(X_test)
+
+    # log the distribution of the predictions vs the true labels
+    # use the class mapping as a reference
+    predictions_labels = pd.Series(predictions).map(class_mapping)
+    y_test_labels = y_test.map(class_mapping)
+    log.info("Predictions distribution: %s",  pd.Series(predictions_labels).value_counts())
+    log.info("True labels distribution: %s",  y_test_labels.value_counts())
+
     # Evaluate model, F1 score
-    f1_weighted = f1_score(y_test, model.predict(X_test), average='weighted')
+    f1_weighted = f1_score(y_test, predictions, average='weighted')
     log.info("F1 score weighted: %s",  f1_weighted)
 
 

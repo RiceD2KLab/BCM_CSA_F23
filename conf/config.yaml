@@ -3,3 +3,7 @@ defaults:
   - model: random_forest
   - features: bmi
   - target: ahi_a0h3a
+hydra:
+  sweep:
+    dir: results
+    subdir: ${now:%Y-%m-%d}/${now:%H-%M}/${hydra.job.override_dirname}

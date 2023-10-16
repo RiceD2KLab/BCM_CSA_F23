@@ -4,6 +4,8 @@
 This is a repository for the BCM CSA F23 class.
 
 ## Installation
+`conda create -n csa -python=3.9`
+`conda activate csa`
 `pip install -r requirements.txt`
 
 ## Usage
