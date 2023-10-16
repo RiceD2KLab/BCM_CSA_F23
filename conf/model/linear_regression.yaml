@@ -1,0 +1,3 @@
+name: linear_regression
+params:
+  class_weight: 'balanced'
