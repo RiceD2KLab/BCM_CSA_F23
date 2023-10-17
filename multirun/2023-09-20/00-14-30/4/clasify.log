@@ -1,3 +1,0 @@
-[2023-09-20 00:14:36,177][__main__][INFO] - Data: SHHS1, Model: random_forest, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h3a
-[2023-09-20 00:14:36,881][__main__][INFO] - Training random forest model
-[2023-09-20 00:14:37,810][__main__][INFO] - F1 score weighted: 0.32562183479573037

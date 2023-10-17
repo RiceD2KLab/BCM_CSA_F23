@@ -1,5 +1,0 @@
-defaults:
-  - dataset: shhs1
-  - model: random_forest
-  - features: bmi
-  - target: ahi_a0h3a
