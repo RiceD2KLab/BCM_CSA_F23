@@ -1,0 +1,22 @@
+folder,id,display_name,code_book
+shhs1,shhs1_adverse_events_form,Adverse Events (SHHS1),SHHS 1 Adverse Events Form.pdf
+shhs1,shhs1_contact_form,Contact Form (SHHS1),SHHS 1 Contact Form.pdf
+shhs1,shhs1_health_interview_form_aric_chs_tucson_strong_heart,"Health Interview Form (ARIC, CHS, Tucson, Strong Heart) (SHHS1)","SHHS 1 Health Interview Form (ARIC, CHS, Tucson, Strong Heart).pdf"
+shhs1,shhs1_health_interview_form_framingham,Health Interview Form (Framingham) (SHHS1),SHHS 1 Health Interview Form (Framingham).pdf
+shhs1,shhs1_health_interview_form_new_york,Health Interview Form (New York) (SHHS1),SHHS 1 Health Interview Form (New York).pdf
+shhs1,shhs1_medications_prescription_and_over_the_counter_form,Medications - Prescription and Over the Counter Form (SHHS1),SHHS 1 Medications - Prescription and Over the Counter Form.pdf
+shhs1,shhs1_morning_survey_form,Morning Survey Form (SHHS1),SHHS 1 Morning Survey Form.pdf
+shhs1,shhs1_psg_scoring_notes_form,PSG Scoring Notes Form (SHHS1),SHHS 1 PSG Scoring Notes Form.pdf
+shhs1,shhs1_quality_of_life_sf_36_form,Quality of Life (SF-36) Form (SHHS1),SHHS 1 Quality of Life (SF-36) Form.pdf
+shhs1,shhs1_seated_bp_weight_neck_circumference_form,"Seated BP, Weight, Neck Circumference Form (SHHS1)","SHHS 1 Seated BP, Weight, Neck Circumference Form.pdf"
+shhs1,shhs1_signal_verifications_form,Signal Verifications Form (SHHS1),SHHS 1 Signal Verifications Form.pdf
+shhs1,shhs1_sleep_data_quality_assessment_and_preliminary_report_form,Sleep Data - Quality Assessment & Preliminary Report Form (SHHS1),SHHS 1 Sleep Data - Quality Assessment & Preliminary Report Form.pdf
+shhs1,shhs1_sleep_data_retrieval_form,Sleep Data Retrieval Form (SHHS1),SHHS 1 Sleep Data Retrieval Form.pdf
+shhs1,shhs1_sleep_habits_questionnaire,Sleep Habits Questionnaire (SHHS1),SHHS 1 Sleep Habits Questionnaire.pdf
+shhs1,shhs1_sleep_habits_questionnaire_mn,Sleep Habits Questionnaire - MN (SHHS1),SHHS 1 Sleep Habits Questionnaire - MN.pdf
+shhs2,shhs2_health_interview,Health Interview Form (SHHS2),SHHS 2 Health Interview.pdf
+shhs2,shhs2_medication_form,Medication Form (SHHS2),SHHS 2 Medications.pdf
+shhs2,shhs2_morning_survey_form,Morning Survey Form (SHHS2),SHHS 2 Morning Survey.pdf
+shhs2,shhs2_physicalmeasurments_bloodpressure_ankle_armindex_ecg,"Physical Measurements, Blood Pressure, Ankle-Arm Index, ECG (SHHS2)","SHHS 2 Physical Measurements, Blood Pressure, Ankle Arm Index, ECG.pdf"
+shhs2,shhs2_quality_of_life_sf_36_form,Quality of Life Survey (SF-36) Form (SHHS2),SHHS 2 Quality of Life Survey - SF36.pdf
+shhs2,shhs2_sleep_habits_questionnaire,Sleep Habits and Lifestyle Questionnaire (SHHS2),SHHS 2 Sleep Habits and Lifestyle Questionnaire.pdf
