@@ -1,3 +1,0 @@
-[2023-10-17 13:49:02,304][__main__][INFO] - Data: SHHS1, Model: svc, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h3a
-[2023-10-17 13:49:03,120][__main__][INFO] - Training svc model
-[2023-10-17 13:49:04,457][__main__][INFO] - F1 score weighted: 0.32797454397967185

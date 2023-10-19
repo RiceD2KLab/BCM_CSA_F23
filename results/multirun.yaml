@@ -3,7 +3,7 @@ hydra:
     dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
   sweep:
     dir: results
-    subdir: ${now:%Y-%m-%d}/${now:%H-%M}/${hydra.job.override_dirname}
+    subdir: threshold/${now:%Y-%m-%d}/${hydra.job.override_dirname}
   launcher:
     _target_: hydra._internal.core_plugins.basic_launcher.BasicLauncher
   sweeper:
@@ -112,16 +112,18 @@ hydra:
     hydra:
     - hydra.mode=MULTIRUN
     task:
-    - dataset=shhs1
-    - model=logistic_regression,svc,random_forest
-    - target=ahi_a0h3a,ahi_a0h4
+    - dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf
+    - model=logistic_regression,random_forest,decision_tree,xgboost
+    - target=hf15
+    - threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9
+    - threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4
   job:
-    name: clasify
+    name: find_threshold
     chdir: null
-    override_dirname: dataset=shhs1,model=logistic_regression,svc,random_forest,target=ahi_a0h3a,ahi_a0h4
+    override_dirname: dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf,model=logistic_regression,random_forest,decision_tree,xgboost,target=hf15,threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4,threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9
     id: ???
     num: ???
-    config_name: config.yaml
+    config_name: config_threshold.yaml
     env_set: {}
     env_copy: []
     config:
@@ -145,10 +147,11 @@ hydra:
       provider: schema
     output_dir: ???
     choices:
-      target: ahi_a0h3a
-      features: bmi
+      threshold_c_o: threshold_1
+      threshold_cahi: threshold_1
+      target: hf15
       model: random_forest
-      dataset: shhs1
+      dataset: feature_selection_dt
       hydra/env: default
       hydra/callbacks: null
       hydra/job_logging: default
@@ -160,16 +163,15 @@ hydra:
       hydra/output: default
   verbose: false
 dataset:
-  name: SHHS1
-  path: ./data/raw/shhs1-dataset-0.20.0.csv
+  name: Decision Tree Feature Selection Dataset
+  path: ./data/processed/threshold/decision_tree
 model:
   name: random_forest
   params:
     class_weight: balanced
-features:
-  names:
-  - bmi_s1
-  - waist
-  - neck20
 target:
-  name: ahi_a0h3a
+  name: hf15
+threshold_cahi:
+  value: 1
+threshold_c_o:
+  value: 1

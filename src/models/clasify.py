@@ -18,6 +18,11 @@ from sklearn.svm import SVC
 from sklearn.metrics import f1_score
 import os
 from pathlib import Path
+import random
+import numpy as np
+
+random.seed(0)
+np.random.seed(0)
 
 log = logging.getLogger(__name__)
 

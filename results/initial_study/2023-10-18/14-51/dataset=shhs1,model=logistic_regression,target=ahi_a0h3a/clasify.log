@@ -1,0 +1,3 @@
+[2023-10-18 14:51:29,250][__main__][INFO] - Data: SHHS1, Model: logistic_regression, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h3a
+[2023-10-18 14:51:30,016][__main__][INFO] - Training logistic regression model
+[2023-10-18 14:51:30,037][__main__][INFO] - F1 score weighted: 0.35243157983988915

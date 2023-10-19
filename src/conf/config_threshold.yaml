@@ -1,0 +1,10 @@
+defaults:
+  - dataset: feature_selection_dt
+  - model: random_forest
+  - target: hf15
+  - threshold_cahi: threshold_1
+  - threshold_c_o: threshold_1
+hydra:
+  sweep:
+    dir: results
+    subdir: threshold/${now:%Y-%m-%d}/${hydra.job.override_dirname}

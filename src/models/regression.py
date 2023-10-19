@@ -20,6 +20,11 @@ from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score
 import os
 from pathlib import Path
+import random
+import numpy as np
+
+random.seed(0)
+np.random.seed(0)
 
 log = logging.getLogger(__name__)
 
