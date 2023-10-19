@@ -1,0 +1,6 @@
+[2023-10-19 09:48:22,174][__main__][INFO] - Data: Random Forest Feature Selection Dataset, Model: logistic_regression, Target: hf15
+[2023-10-19 09:48:22,296][__main__][INFO] - Model already trained
+[2023-10-19 09:48:22,308][__main__][INFO] - F1 Validation score weighted: 0.8245637665599045
+[2023-10-19 09:48:22,312][__main__][INFO] - F1 Test score weighted: 0.8177858559427648
+[2023-10-19 09:48:22,316][__main__][INFO] - Confusion matrix: [[1324  306]
+ [ 288 1342]]

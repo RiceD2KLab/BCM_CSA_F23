@@ -1,0 +1,6 @@
+[2023-10-19 09:51:16,212][__main__][INFO] - Data: Mutual Information Feature Selection Dataset, Model: logistic_regression, Target: hf15
+[2023-10-19 09:51:16,368][__main__][INFO] - Model already trained
+[2023-10-19 09:51:16,381][__main__][INFO] - F1 Validation score weighted: 0.8396045830223624
+[2023-10-19 09:51:16,386][__main__][INFO] - F1 Test score weighted: 0.8450510697104536
+[2023-10-19 09:51:16,390][__main__][INFO] - Confusion matrix: [[1351  279]
+ [ 226 1404]]

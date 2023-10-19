@@ -1,0 +1,6 @@
+[2023-10-19 09:49:56,485][__main__][INFO] - Data: Decision Tree Feature Selection Dataset, Model: logistic_regression, Target: hf15
+[2023-10-19 09:49:56,596][__main__][INFO] - Model already trained
+[2023-10-19 09:49:56,615][__main__][INFO] - F1 Validation score weighted: 0.8245637665599045
+[2023-10-19 09:49:56,620][__main__][INFO] - F1 Test score weighted: 0.8177858559427648
+[2023-10-19 09:49:56,625][__main__][INFO] - Confusion matrix: [[1324  306]
+ [ 288 1342]]

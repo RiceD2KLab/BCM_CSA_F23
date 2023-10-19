@@ -1,0 +1,13 @@
+dataset:
+  name: Mutual Information Feature Selection Dataset
+  path: ./data/processed/threshold/mi
+model:
+  name: logistic_regression
+  params:
+    class_weight: balanced
+target:
+  name: hf15
+threshold_cahi:
+  value: 4
+threshold_c_o:
+  value: 4

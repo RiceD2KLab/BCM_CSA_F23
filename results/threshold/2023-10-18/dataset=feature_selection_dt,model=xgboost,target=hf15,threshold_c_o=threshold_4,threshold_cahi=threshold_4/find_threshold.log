@@ -1,0 +1,6 @@
+[2023-10-19 06:49:38,170][__main__][INFO] - Data: Decision Tree Feature Selection Dataset, Model: xgboost, Target: hf15
+[2023-10-19 06:49:38,295][__main__][INFO] - Model already trained
+[2023-10-19 06:49:38,333][__main__][INFO] - F1 Validation score weighted: 0.9947437219076629
+[2023-10-19 06:49:38,355][__main__][INFO] - F1 Test score weighted: 0.9950919949835973
+[2023-10-19 06:49:38,376][__main__][INFO] - Confusion matrix: [[1626    4]
+ [  12 1618]]
