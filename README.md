@@ -8,7 +8,7 @@ This is a repository for the BCM CSA F23 class.
 
 `pip install -r requirements.txt`
 
-## Usage
+### Generating results for Initial Experiment
 `python clasify.py --multirun dataset=shhs1 model=logistic_regression,svc,random_forest target=ahi_a0h3a,ahi_a0h4`
 
 ### Generating results for the Threshold experiments
