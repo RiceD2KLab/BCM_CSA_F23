@@ -10,6 +10,7 @@ This is a repository for the BCM CSA F23 class.
 
 ### Generating results for Initial Experiment
 `python clasify.py --multirun dataset=shhs1 model=logistic_regression,svc,random_forest target=ahi_a0h3a,ahi_a0h4`
+
 `python regression.py --multirun dataset=shhs1 model=linear_regression,ridge,lasso,knn,svr target=ahi_a0h3a,ahi_a0h4`
 
 ### Generating results for the Threshold experiments
