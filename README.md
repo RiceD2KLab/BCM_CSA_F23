@@ -75,7 +75,11 @@ The configuration file is `config.yaml`. It contains the following parameters:
 
 ## Notebooks
 0.1 and 0.2 are the experiments for replication of the Central Sleep Apnea paper. 0.1 focuses on the demographic data, and 0.2 focuses on drug use data. 
+
 1.0 is the Exploratory Data Analysis (EDA)
+
 2.0 is the feature selection
+
 3.0 is the preprocessing for cheap feature analysis and the threshold analysis
+
 4.1, 4.2, and 4.3 are for results and analysis. 4.1 is for cheap feature analysi, 4.2 is for threshold analysis, and 4.3 is to compare the model performance between cheap features and all features from feature selection. 
