@@ -1,0 +1,4 @@
+[2023-10-19 20:12:07,466][__main__][INFO] - Data: SHHS1, Model: svr, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h4
+[2023-10-19 20:12:07,717][__main__][INFO] - Training SVM model
+[2023-10-19 20:12:08,068][__main__][INFO] - MSE: 0.7865546494745421
+[2023-10-19 20:12:08,159][__main__][INFO] - R Squared Score: 0.11841033000557577

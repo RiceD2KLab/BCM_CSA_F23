@@ -1,0 +1,14 @@
+dataset:
+  name: SHHS1
+  path: ./data/raw/shhs1-dataset-0.20.0.csv
+model:
+  name: ridge
+  params:
+    class_weight: balanced
+features:
+  names:
+  - bmi_s1
+  - waist
+  - neck20
+target:
+  name: ahi_a0h4

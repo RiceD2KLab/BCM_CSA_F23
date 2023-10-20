@@ -61,7 +61,7 @@ def data_preprocessing(data, features, target):
     return X_train, X_test, y_train, y_test
 
 
-@hydra.main(config_path="conf", config_name="config.yaml")
+@hydra.main(config_path="../conf", config_name="config.yaml")
 def regression(cfg: DictConfig) -> None:
     """Function that takes in hydra config and runs the regression pipeline.
 
@@ -88,7 +88,7 @@ def regression(cfg: DictConfig) -> None:
         model = LinearRegression()
     elif model_name == 'lasso':
         log.info("Training LASSO model")
-        model = LASSO()
+        model = Lasso()
     elif model_name == 'ridge':
         log.info("Training Ridge Regression model")
         model = Ridge()
@@ -102,9 +102,9 @@ def regression(cfg: DictConfig) -> None:
     model.fit(X_train, y_train)
 
     # Evaluate model with MSE and R2 score
-    mse = mean_squared_error(y_test, model.predict(X_test), average='weighted')
+    mse = mean_squared_error(y_test, model.predict(X_test))
     log.info("MSE: %s",  mse)
-    r_squared = r2_score(y_test, model.predict(X_test), average='weighted')
+    r_squared = r2_score(y_test, model.predict(X_test))
     log.info("R Squared Score: %s",  r_squared)
 
 
