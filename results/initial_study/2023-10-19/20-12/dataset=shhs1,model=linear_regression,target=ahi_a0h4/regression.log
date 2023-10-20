@@ -1,4 +1,0 @@
-[2023-10-19 20:12:04,423][__main__][INFO] - Data: SHHS1, Model: linear_regression, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h4
-[2023-10-19 20:12:04,673][__main__][INFO] - Training linear regression model
-[2023-10-19 20:12:04,674][__main__][INFO] - MSE: 0.7456897694393585
-[2023-10-19 20:12:04,674][__main__][INFO] - R Squared Score: 0.16421268605120654

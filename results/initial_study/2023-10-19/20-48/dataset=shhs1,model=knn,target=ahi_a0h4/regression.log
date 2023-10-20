@@ -1,0 +1,4 @@
+[2023-10-19 20:48:19,455][__main__][INFO] - Data: SHHS1, Model: knn, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h4
+[2023-10-19 20:48:19,702][__main__][INFO] - Training KNN model
+[2023-10-19 20:48:19,706][__main__][INFO] - MSE: 177.10835055555575
+[2023-10-19 20:48:19,708][__main__][INFO] - R Squared Score: -0.02685655248479213

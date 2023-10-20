@@ -113,14 +113,14 @@ hydra:
     - hydra.mode=MULTIRUN
     task:
     - dataset=shhs1
-    - model=linear_regression,lasso,ridge,knn,svr
-    - target=ahi_a0h3a,ahi_a0h4
+    - model=knn
+    - target=ahi_a0h3a
   job:
     name: regression
     chdir: null
-    override_dirname: dataset=shhs1,model=linear_regression,lasso,ridge,knn,svr,target=ahi_a0h3a,ahi_a0h4
-    id: ???
-    num: ???
+    override_dirname: dataset=shhs1,model=knn,target=ahi_a0h3a
+    id: '6'
+    num: 6
     config_name: config.yaml
     env_set: {}
     env_copy: []
@@ -143,11 +143,11 @@ hydra:
     - path: ''
       schema: structured
       provider: schema
-    output_dir: ???
+    output_dir: /Users/molee/Documents/GitHub/BCM_CSA_F23/results/initial_study/2023-10-19/20-48/dataset=shhs1,model=knn,target=ahi_a0h3a
     choices:
       target: ahi_a0h3a
       features: bmi
-      model: random_forest
+      model: knn
       dataset: shhs1
       hydra/env: default
       hydra/callbacks: null
@@ -159,17 +159,3 @@ hydra:
       hydra/launcher: basic
       hydra/output: default
   verbose: false
-dataset:
-  name: SHHS1
-  path: ./data/raw/shhs1-dataset-0.20.0.csv
-model:
-  name: random_forest
-  params:
-    class_weight: balanced
-features:
-  names:
-  - bmi_s1
-  - waist
-  - neck20
-target:
-  name: ahi_a0h3a

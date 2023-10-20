@@ -1,4 +1,0 @@
-[2023-10-19 20:12:05,041][__main__][INFO] - Data: SHHS1, Model: lasso, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h4
-[2023-10-19 20:12:05,351][__main__][INFO] - Training LASSO model
-[2023-10-19 20:12:05,352][__main__][INFO] - MSE: 0.8922012089098039
-[2023-10-19 20:12:05,353][__main__][INFO] - R Squared Score: -9.152026227976506e-07

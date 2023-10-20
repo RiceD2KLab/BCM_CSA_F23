@@ -42,8 +42,7 @@ def data_preprocessing(data, features, target):
     # AHI >=5 (all sleep apnea)
     # AHI>=15 (moderate sleep apnea)
     # AHI >= 30 (severe sleep apnea)
-
-    data[target] = pd.cut(data[target], bins=[0, 5, 15, 30, 1000], labels=[0, 1, 2, 3])
+    
     
     # Drop nan on rows
     data = data.dropna()
@@ -57,7 +56,7 @@ def data_preprocessing(data, features, target):
 
     # Split on test/train 80/20
     # split startified on target
-    X_train, X_test, y_train, y_test = train_test_split(scaled_data, data[target], test_size=0.2, random_state=42, stratify=data[target])
+    X_train, X_test, y_train, y_test = train_test_split(scaled_data, data[target], test_size=0.2, random_state=42)
     return X_train, X_test, y_train, y_test
 
 

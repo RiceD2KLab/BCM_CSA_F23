@@ -1,4 +1,0 @@
-[2023-10-19 20:12:05,774][__main__][INFO] - Data: SHHS1, Model: ridge, Features: ['bmi_s1', 'waist', 'neck20'], Target: ahi_a0h4
-[2023-10-19 20:12:06,026][__main__][INFO] - Training Ridge Regression model
-[2023-10-19 20:12:06,027][__main__][INFO] - MSE: 0.7456877032006319
-[2023-10-19 20:12:06,027][__main__][INFO] - R Squared Score: 0.1642150019420583
