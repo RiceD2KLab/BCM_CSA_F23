@@ -1,4 +1,5 @@
 # 4.1
+from sklearn.model_selection import train_test_split
 
 def split_data(data, features, target):
     """Split on test/train/val.
@@ -10,7 +11,6 @@ def split_data(data, features, target):
     Returns:
         tuple: X_train, X_test, y_train, y_test, X_val, y_val
     """
-    from sklearn.model_selection import train_test_split
     # Split on test/train 80/20
     # split startified on target
     X_train, X_test, y_train, y_test = train_test_split(data[features], data[target], test_size=0.3, random_state=1)

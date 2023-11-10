@@ -1,0 +1,13 @@
+dataset:
+  name: Forward Selection Feature Selection Dataset
+  path: ./data/processed/threshold/forward_selection
+model:
+  name: logistic_regression
+  params:
+    class_weight: balanced
+target:
+  name: hf15
+threshold_cahi:
+  value: 1
+threshold_c_o:
+  value: 5

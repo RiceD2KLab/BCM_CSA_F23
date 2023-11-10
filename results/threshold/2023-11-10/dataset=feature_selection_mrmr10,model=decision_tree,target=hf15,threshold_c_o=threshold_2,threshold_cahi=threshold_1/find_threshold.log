@@ -1,0 +1,6 @@
+[2023-11-10 14:12:22,593][__main__][INFO] - Data: MRMR 10 Feature Selection Dataset, Model: random_forest, Target: hf15
+[2023-11-10 14:12:22,658][__main__][INFO] - Model already trained
+[2023-11-10 14:12:23,235][__main__][INFO] - F1 Validation score weighted: 0.9815985781818621
+[2023-11-10 14:12:23,805][__main__][INFO] - F1 Test score weighted: 0.9794428215946186
+[2023-11-10 14:12:24,386][__main__][INFO] - Confusion matrix: [[1622    8]
+ [  59 1571]]

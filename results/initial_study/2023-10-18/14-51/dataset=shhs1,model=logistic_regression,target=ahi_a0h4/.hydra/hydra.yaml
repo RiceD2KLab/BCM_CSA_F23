@@ -116,7 +116,7 @@ hydra:
     - model=logistic_regression
     - target=ahi_a0h4
   job:
-    name: clasify
+    name: classify
     chdir: null
     override_dirname: dataset=shhs1,model=logistic_regression,target=ahi_a0h4
     id: '1'

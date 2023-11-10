@@ -1,0 +1,6 @@
+[2023-11-10 14:09:56,025][__main__][INFO] - Data: Forward Selection Feature Selection Dataset, Model: xgboost, Target: hf15
+[2023-11-10 14:09:56,128][__main__][INFO] - Model already trained
+[2023-11-10 14:09:56,185][__main__][INFO] - F1 Validation score weighted: 0.9947437582128777
+[2023-11-10 14:09:56,220][__main__][INFO] - F1 Test score weighted: 0.9920245128610847
+[2023-11-10 14:09:56,251][__main__][INFO] - Confusion matrix: [[1614   16]
+ [  10 1620]]
