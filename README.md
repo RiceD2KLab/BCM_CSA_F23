@@ -1,7 +1,11 @@
 # BCM_CSA_F23
 
 ## Description
-This is a repository for the BCM CSA F23 class.
+
+## Objective 1 - Cost Effective Features
+
+## Objective 2 - Threhshold finetuning
+
 
 ## Installation
 `conda create -n csa python=3.9`
