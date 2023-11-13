@@ -52,14 +52,24 @@ def write_features_to_csv(df, shhs1, model_name, target_vars, filepath, model_im
   return len(model_features)
 
 def get_backward_selection_features(x, y, IC_metric, threshold=1.8, debug=False):
-  """
+  """Run backward selection given a dataset, target, information criterion (AIC/BIC), and threshold.
+
+  Args:
+    x (pd.DataFrame): the imputed input dataset without the target variable
+    y (pd.DataFrame): the target variable data
+    IC_metric (string): either AIC or BIC
+    threshold (float): threshold to take away features from
+    debug (bool): whether print statements should be printed (default False)
+  
+  Returns:
+    backward_selection_features ([string]): the list of selected features
   """
   backward_selection_features = list(x.columns)
 
   # Start with an arbitrarily large initial AIC/BIC
   previous_IC = float('inf')
 
-  #run backward selection
+  # Run backward selection while within threshold or there are still features left.
   while len(backward_selection_features) > 0:
     removed_feature_IC = float('inf')
     feature_to_remove = None
@@ -72,6 +82,7 @@ def get_backward_selection_features(x, y, IC_metric, threshold=1.8, debug=False)
       y_backward = y.copy()
       
       x_backward = sm.add_constant(x_backward)
+      # Calculate AIC/BIC using library
       model = sm.OLS(y_backward, x_backward).fit()
       if IC_metric == "AIC":
         IC = model.aic
@@ -99,14 +110,24 @@ def get_backward_selection_features(x, y, IC_metric, threshold=1.8, debug=False)
   return backward_selection_features
 
 def get_forward_selection_features(x, y, IC_metric, threshold, debug=False):
-  """
+  """Run forward selection given a dataset, target, information criterion (AIC/BIC), and threshold.
+
+  Args:
+    x (pd.DataFrame): the imputed input dataset without the target variable
+    y (pd.DataFrame): the target variable data
+    IC_metric (string): either AIC or BIC
+    threshold (float): threshold to keep adding features to
+    debug (bool): whether print statements should be printed (default False)
+  
+  Returns:
+    forward_selection_features ([string]): the list of selected features
   """
   forward_selection_features = []
 
   # Start with an arbitrarily large initial IC value
   previous_IC = float('inf')
 
-  #run forward selection
+  # Run forward selection
   while len(forward_selection_features) < len(x.columns):
     remaining_features = list(set(x.columns) - set(forward_selection_features))
     best_feature_IC = float('inf')
@@ -119,6 +140,7 @@ def get_forward_selection_features(x, y, IC_metric, threshold, debug=False):
         x_forward = x[candidate_features]
         y_forward = y.copy()
 
+        # Calculate AIC/BIC using library
         x_forward = sm.add_constant(x_forward)
         model = sm.OLS(y_forward, x_forward).fit()
         if IC_metric == "AIC":
@@ -146,16 +168,19 @@ def get_forward_selection_features(x, y, IC_metric, threshold, debug=False):
   
   return forward_selection_features
 
-def get_features(method_name, x, y):
+def get_features_from_model(method_name, x, y):
     """Creates and fits a feature selection model given the name, x, and y data.
     
     Available method names:
         1. decision tree
         2. random forest
         3. mutual information
-        4. forward selection
-        5. backward selection
-        6. MRMR
+        4. forward selection AIC
+        5. forward selection BIC
+        6. backward selection AIC
+        7. backward selection BIC
+        8. MRMR 10
+        9. MRMR 20
 
     Args:
         method_name (str): feature selection name
@@ -163,7 +188,8 @@ def get_features(method_name, x, y):
         y (pd.DataFrame): the data column of the target variable
         
     Returns:
-      (model_importances, model_features),
+      (model_importances, model_features): a tuple of importances or features, depending on
+      which type the fitted model returns.
     """
     if method_name == "decision tree":
       fs = DecisionTreeRegressor(random_state = 131)
