@@ -49,18 +49,14 @@ def train_model(model, X_train, y_train, X_test, y_test, X_val, y_val):
     return mae, model
 
 
-def find_best_data(folder_loc, target):
+def find_best_data(folder_loc, datasets, target):
     """GIven datasets, return the best dataset and model for some target variable
 
     Args:
-        folder_loc (string): location of datasets
+        folder_loc (string): location of folder contianing datasets
+        datasets (array): list of dataset locations within folder
         target (string): target variable
     """
-    datasets = os.listdir(folder_loc)
-
-    datasets = [dataset for dataset in datasets if target in dataset]
-
-
     best_model = None
     model_name = None
     best_mae = 100000
