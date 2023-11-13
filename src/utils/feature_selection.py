@@ -1,8 +1,5 @@
 import numpy as np
 
-def test_successful_import():
-    print('feature_selection imported')
-    
 def find_important_features(x_imputed, shhs1, model, model_name, target_var):
   model_importances = model.feature_importances_
   model_features = np.array(x_imputed.columns)[model_importances > 0]
