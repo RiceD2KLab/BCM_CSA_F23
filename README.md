@@ -82,12 +82,17 @@ The success of this study could influence other healthcare domains, leveraging d
 |   |
 │   ├── train               <- Scripts to train models and then use trained models to make
 │   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │   
-│   ├── classify.py         <- Script to run the classification experiments.
-│   ├── find_threshold.py   <- Script to run the threshold experiments.
-|   ├── regression.py       <- Script to run the regression experiments. 
+│   │   ├── classify.py         <- Script to run the classification experiments.
+│   |   ├── find_threshold.py   <- Script to run the threshold experiments.
+|   |   └── regression.py       <- Script to run the regression experiments.
+|   |
+|   ├── utils               <- Directory containing Python modules for various custom routines.
+|   |   ├── data_exploration.py  <- Utils to calculate metrics used in data exploration.
+|   |   ├── feature_selection.py <- Utils containing feature selection methods.
+|   |   ├── modeling.py          <- Utils containing modeling methods.
+|   |   ├── preprocessing.py     <- Utils used to preprocess (wrangling + cleaning) the dataset(s).
+|   |   ├── threshold_logs.py    <- Utils used to generate output logs for threshold analysis.
+|   |   └── visualization.py     <- Utils used to generate visualizations from our analysis.
 
 ```
 
@@ -99,6 +104,6 @@ We harness Hydra for dynamic configuration to enhance the project's adaptability
 
 This folder contains Jupyter notebooks used for data exploration, preprocessing, feature selection, and result analysis. The description of the files in this folder and their descriptions can be found in this [README.md](./src/notebooks/README.md)
 
-### Utils
+### Src/Utils
 
 This folder contains utility functions used in the notebooks.
