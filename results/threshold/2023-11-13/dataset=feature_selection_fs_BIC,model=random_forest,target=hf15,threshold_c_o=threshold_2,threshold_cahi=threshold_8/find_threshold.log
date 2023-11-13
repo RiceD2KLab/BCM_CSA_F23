@@ -1,0 +1,6 @@
+[2023-11-13 15:29:35,467][__main__][INFO] - Data: Forward Selection BIC Feature Selection Dataset, Model: random_forest, Target: hf15
+[2023-11-13 15:29:35,504][__main__][INFO] - Model already trained
+[2023-11-13 15:29:35,780][__main__][INFO] - F1 Validation score weighted: 0.9894873530508778
+[2023-11-13 15:29:36,083][__main__][INFO] - F1 Test score weighted: 0.9914110397120854
+[2023-11-13 15:29:36,376][__main__][INFO] - Confusion matrix: [[1617   13]
+ [  15 1615]]

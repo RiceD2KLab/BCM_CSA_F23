@@ -1,0 +1,11 @@
+dataset:
+  name: Backward Selection Feature Selection Dataset
+  path: ./data/processed/threshold/backward_selection_AIC
+model:
+  name: xgboost
+target:
+  name: hf15
+threshold_cahi:
+  value: 1
+threshold_c_o:
+  value: 3

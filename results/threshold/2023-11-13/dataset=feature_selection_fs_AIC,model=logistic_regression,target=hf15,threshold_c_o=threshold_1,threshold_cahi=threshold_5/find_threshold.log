@@ -1,0 +1,6 @@
+[2023-11-13 15:26:29,806][__main__][INFO] - Data: Forward Selection AIC Feature Selection Dataset, Model: logistic_regression, Target: hf15
+[2023-11-13 15:26:29,858][__main__][INFO] - Model already trained
+[2023-11-13 15:26:29,863][__main__][INFO] - F1 Validation score weighted: 0.6930840780893829
+[2023-11-13 15:26:29,870][__main__][INFO] - F1 Test score weighted: 0.6935568693107189
+[2023-11-13 15:26:29,876][__main__][INFO] - Confusion matrix: [[1134  496]
+ [ 503 1127]]

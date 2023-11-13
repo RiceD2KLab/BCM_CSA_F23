@@ -38,7 +38,7 @@ The success of this study could influence other healthcare domains, leveraging d
 
 ### Generating results for the Threshold experiments
 
-`python3 ./src/models/find_threshold.py --multirun dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf model=logistic_regression,svc,random_forest,decision_tree,xgboost target=hf15 threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9 threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5`
+`python3 ./src/models/find_threshold.py --multirun dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf,feature_selection_bs,feature_selection_mrmr10,feature_selection_mrmr20,feature_selection_fs_AIC,feature_selection_fs_BIC model=logistic_regression,svc,random_forest,decision_tree,xgboost target=hf15 threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9 threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5`
 
 ## Directory structure
 
@@ -80,7 +80,7 @@ The success of this study could influence other healthcare domains, leveraging d
 |   │ 
 |   ├── notebooks           <- Jupyter notebooks. 
 |   |
-│   ├── train               <- Scripts to train models and then use trained models to make
+│   ├── models               <- Scripts to train models and then use models to make
 │   │   │                 predictions
 │   │   ├── classify.py         <- Script to run the classification experiments.
 │   |   ├── find_threshold.py   <- Script to run the threshold experiments.

@@ -1,0 +1,11 @@
+dataset:
+  name: Random Forest Feature Selection Dataset
+  path: ./data/processed/threshold/random_forest
+model:
+  name: xgboost
+target:
+  name: hf15
+threshold_cahi:
+  value: 7
+threshold_c_o:
+  value: 1

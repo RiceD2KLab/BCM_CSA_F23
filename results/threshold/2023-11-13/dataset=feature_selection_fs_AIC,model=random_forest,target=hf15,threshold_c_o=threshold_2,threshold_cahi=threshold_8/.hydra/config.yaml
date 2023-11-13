@@ -1,0 +1,13 @@
+dataset:
+  name: Forward Selection AIC Feature Selection Dataset
+  path: ./data/processed/threshold/forward_selection_AIC
+model:
+  name: random_forest
+  params:
+    class_weight: balanced
+target:
+  name: hf15
+threshold_cahi:
+  value: 8
+threshold_c_o:
+  value: 2
