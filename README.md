@@ -44,6 +44,14 @@ The cost of a study to measure the events per hour is too expensive ($2K to $10k
 
 `pip install -r requirements.txt`
 
+### Generating results for Initial Experiment
+`python classify.py --multirun dataset=shhs1 model=logistic_regression,svc,random_forest target=ahi_a0h3a,ahi_a0h4`
+
+`python regression.py --multirun dataset=shhs1 model=linear_regression,ridge,lasso,knn,svr target=ahi_a0h3a,ahi_a0h4`
+
+### Generating results for the Threshold experiments
+
+`python3 ./src/models/find_threshold.py --multirun dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf,feature_selection_bs,feature_selection_mrmr10,feature_selection_mrmr20,feature_selection_fs_AIC,feature_selection_fs_BIC model=logistic_regression,svc,random_forest,decision_tree,xgboost target=hf15 threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9 threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5`
 
 ## Directory structure
 
@@ -85,14 +93,19 @@ The cost of a study to measure the events per hour is too expensive ($2K to $10k
 |   │ 
 |   ├── notebooks           <- Jupyter notebooks. 
 |   |
-│   ├── train               <- Scripts to train models and then use trained models to make
+│   ├── models               <- Scripts to train models and then use models to make
 │   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │   
-│   ├── classify.py         <- Script to run the classification experiments.
-│   ├── find_threshold.py   <- Script to run the threshold experiments.
-|   ├── regression.py       <- Script to run the regression experiments. 
+│   │   ├── classify.py         <- Script to run the classification experiments.
+│   |   ├── find_threshold.py   <- Script to run the threshold experiments.
+|   |   └── regression.py       <- Script to run the regression experiments.
+|   |
+|   ├── utils               <- Directory containing Python modules for various custom routines.
+|   |   ├── data_exploration.py  <- Utils to calculate metrics used in data exploration.
+|   |   ├── feature_selection.py <- Utils containing feature selection methods.
+|   |   ├── modeling.py          <- Utils containing modeling methods.
+|   |   ├── preprocessing.py     <- Utils used to preprocess (wrangling + cleaning) the dataset(s).
+|   |   ├── threshold_logs.py    <- Utils used to generate output logs for threshold analysis.
+|   |   └── visualization.py     <- Utils used to generate visualizations from our analysis.
 
 ```
 
@@ -104,6 +117,6 @@ We harness Hydra for dynamic configuration to enhance the project's adaptability
 
 This folder contains Jupyter notebooks used for data exploration, preprocessing, feature selection, and result analysis. The description of the files in this folder and their descriptions can be found in this [README.md](./src/notebooks/README.md)
 
-### Utils
+### Src/Utils
 
 This folder contains utility functions used in the notebooks.

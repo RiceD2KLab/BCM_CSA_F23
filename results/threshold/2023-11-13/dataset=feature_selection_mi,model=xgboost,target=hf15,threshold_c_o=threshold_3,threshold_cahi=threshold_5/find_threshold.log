@@ -1,0 +1,6 @@
+[2023-11-13 15:17:35,079][__main__][INFO] - Data: Mutual Information Feature Selection Dataset, Model: xgboost, Target: hf15
+[2023-11-13 15:17:35,335][__main__][INFO] - Model already trained
+[2023-11-13 15:17:35,378][__main__][INFO] - F1 Validation score weighted: 0.9934296977660972
+[2023-11-13 15:17:35,424][__main__][INFO] - F1 Test score weighted: 0.9966257640136887
+[2023-11-13 15:17:35,461][__main__][INFO] - Confusion matrix: [[1626    4]
+ [   7 1623]]

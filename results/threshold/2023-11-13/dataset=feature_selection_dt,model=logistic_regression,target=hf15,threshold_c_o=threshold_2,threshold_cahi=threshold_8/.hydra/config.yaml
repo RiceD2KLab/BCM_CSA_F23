@@ -1,0 +1,13 @@
+dataset:
+  name: Decision Tree Feature Selection Dataset
+  path: ./data/processed/threshold/decision_tree
+model:
+  name: logistic_regression
+  params:
+    class_weight: balanced
+target:
+  name: hf15
+threshold_cahi:
+  value: 8
+threshold_c_o:
+  value: 2

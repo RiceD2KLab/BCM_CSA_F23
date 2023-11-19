@@ -1,0 +1,6 @@
+[2023-11-13 15:16:06,559][__main__][INFO] - Data: Mutual Information Feature Selection Dataset, Model: random_forest, Target: hf15
+[2023-11-13 15:16:06,776][__main__][INFO] - Model already trained
+[2023-11-13 15:16:07,017][__main__][INFO] - F1 Validation score weighted: 0.9921155147881584
+[2023-11-13 15:16:07,288][__main__][INFO] - F1 Test score weighted: 0.9963190059358852
+[2023-11-13 15:16:07,575][__main__][INFO] - Confusion matrix: [[1627    3]
+ [   9 1621]]

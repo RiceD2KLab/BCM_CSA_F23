@@ -1,0 +1,6 @@
+[2023-11-13 15:30:29,591][__main__][INFO] - Data: Forward Selection BIC Feature Selection Dataset, Model: xgboost, Target: hf15
+[2023-11-13 15:30:29,626][__main__][INFO] - Model already trained
+[2023-11-13 15:30:29,652][__main__][INFO] - F1 Validation score weighted: 0.9927725895429187
+[2023-11-13 15:30:29,672][__main__][INFO] - F1 Test score weighted: 0.9917177906317315
+[2023-11-13 15:30:29,688][__main__][INFO] - Confusion matrix: [[1617   13]
+ [  14 1616]]
