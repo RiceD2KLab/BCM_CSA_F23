@@ -34,6 +34,14 @@ This configuration file contains options for feature selection using mutual info
 
 This configuration file contains options for feature selection using a random forest-based method.
 
+### `dataset/feature_selection_fs.yaml`
+
+This configuration file contains options for feature selection using a random forward selection method.
+
+### `dataset/feature_selection_bs.yaml`
+
+This configuration file contains options for feature selection using a random backward selection method.
+
 ### `features/bmi.yaml`
 
 This configuration file defines settings for BMI (Body Mass Index) feature extraction.

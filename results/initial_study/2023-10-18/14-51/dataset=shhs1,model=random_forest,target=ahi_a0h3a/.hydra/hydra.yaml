@@ -116,7 +116,7 @@ hydra:
     - model=random_forest
     - target=ahi_a0h3a
   job:
-    name: clasify
+    name: classify
     chdir: null
     override_dirname: dataset=shhs1,model=random_forest,target=ahi_a0h3a
     id: '4'

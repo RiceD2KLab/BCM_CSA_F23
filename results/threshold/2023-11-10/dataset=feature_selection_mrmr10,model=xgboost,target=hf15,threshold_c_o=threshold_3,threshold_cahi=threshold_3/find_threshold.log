@@ -1,0 +1,6 @@
+[2023-11-10 14:13:57,794][__main__][INFO] - Data: MRMR 10 Feature Selection Dataset, Model: xgboost, Target: hf15
+[2023-11-10 14:13:57,867][__main__][INFO] - Model already trained
+[2023-11-10 14:13:57,908][__main__][INFO] - F1 Validation score weighted: 0.9835726488272685
+[2023-11-10 14:13:57,935][__main__][INFO] - F1 Test score weighted: 0.9868084642268755
+[2023-11-10 14:13:58,047][__main__][INFO] - Confusion matrix: [[1625    5]
+ [  38 1592]]

@@ -116,7 +116,7 @@ hydra:
     - model=svc
     - target=ahi_a0h3a
   job:
-    name: clasify
+    name: classify
     chdir: null
     override_dirname: dataset=shhs1,model=svc,target=ahi_a0h3a
     id: '2'

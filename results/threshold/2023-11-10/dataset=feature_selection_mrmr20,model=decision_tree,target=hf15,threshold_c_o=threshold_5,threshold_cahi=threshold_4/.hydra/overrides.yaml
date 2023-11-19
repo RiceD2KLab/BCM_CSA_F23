@@ -1,0 +1,5 @@
+- dataset=feature_selection_mrmr20
+- model=decision_tree
+- target=hf15
+- threshold_cahi=threshold_4
+- threshold_c_o=threshold_5

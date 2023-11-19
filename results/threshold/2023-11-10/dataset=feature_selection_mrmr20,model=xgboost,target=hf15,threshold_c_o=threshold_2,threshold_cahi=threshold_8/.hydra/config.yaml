@@ -1,0 +1,11 @@
+dataset:
+  name: MRMR 20 Feature Selection Dataset
+  path: ./data/processed/threshold/selected_features_20
+model:
+  name: xgboost
+target:
+  name: hf15
+threshold_cahi:
+  value: 8
+threshold_c_o:
+  value: 2

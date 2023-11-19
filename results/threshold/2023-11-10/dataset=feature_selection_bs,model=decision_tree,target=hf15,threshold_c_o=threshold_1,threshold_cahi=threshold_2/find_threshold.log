@@ -1,0 +1,6 @@
+[2023-11-10 14:02:31,705][__main__][INFO] - Data: Backward Selection Feature Selection Dataset, Model: random_forest, Target: hf15
+[2023-11-10 14:02:32,414][__main__][INFO] - Model already trained
+[2023-11-10 14:02:32,612][__main__][INFO] - F1 Validation score weighted: 0.9927726394629771
+[2023-11-10 14:02:32,870][__main__][INFO] - F1 Test score weighted: 0.9953987379368602
+[2023-11-10 14:02:33,112][__main__][INFO] - Confusion matrix: [[1627    3]
+ [  12 1618]]

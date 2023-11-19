@@ -1,0 +1,13 @@
+dataset:
+  name: Forward Selection BIC Feature Selection Dataset
+  path: ./data/processed/threshold/forward_selection_BIC
+model:
+  name: random_forest
+  params:
+    class_weight: balanced
+target:
+  name: hf15
+threshold_cahi:
+  value: 3
+threshold_c_o:
+  value: 4

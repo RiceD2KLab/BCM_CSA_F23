@@ -1,0 +1,2 @@
+[2023-11-09 22:57:37,797][__main__][INFO] - Data: Backward Selection Feature Selection Dataset, Model: svc, Target: hf15
+[2023-11-09 22:57:38,475][__main__][INFO] - Training svc model

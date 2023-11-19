@@ -1,0 +1,6 @@
+[2023-11-10 14:14:14,180][__main__][INFO] - Data: MRMR 20 Feature Selection Dataset, Model: logistic_regression, Target: hf15
+[2023-11-10 14:14:14,278][__main__][INFO] - Training logistic regression model
+[2023-11-10 14:14:14,788][__main__][INFO] - F1 Validation score weighted: 0.8487984561081001
+[2023-11-10 14:14:14,799][__main__][INFO] - F1 Test score weighted: 0.8527141151608455
+[2023-11-10 14:14:14,811][__main__][INFO] - Confusion matrix: [[1419  211]
+ [ 269 1361]]

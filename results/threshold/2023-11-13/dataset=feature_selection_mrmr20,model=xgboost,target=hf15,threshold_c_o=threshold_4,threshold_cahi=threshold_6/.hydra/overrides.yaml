@@ -1,0 +1,5 @@
+- dataset=feature_selection_mrmr20
+- model=xgboost
+- target=hf15
+- threshold_cahi=threshold_6
+- threshold_c_o=threshold_4

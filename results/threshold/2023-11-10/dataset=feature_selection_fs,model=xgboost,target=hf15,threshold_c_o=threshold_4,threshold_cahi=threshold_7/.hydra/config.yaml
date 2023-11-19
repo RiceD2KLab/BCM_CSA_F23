@@ -1,0 +1,11 @@
+dataset:
+  name: Forward Selection Feature Selection Dataset
+  path: ./data/processed/threshold/forward_selection
+model:
+  name: xgboost
+target:
+  name: hf15
+threshold_cahi:
+  value: 7
+threshold_c_o:
+  value: 4

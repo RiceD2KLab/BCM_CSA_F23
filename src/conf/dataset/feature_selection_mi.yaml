@@ -1,2 +1,2 @@
 name: Mutual Information Feature Selection Dataset
-path: ./data/processed/threshold/mi
+path: ./data/processed/threshold/mutual_information
