@@ -1,11 +1,17 @@
 ,display_name,description,folder
+<<<<<<< HEAD:notebooks/results.csv
+=======
 62,NSRR Subject ID,This subject identifier was created by the National Sleep Research Resource (NSRR) team to more easily match with file downloads. Use 'pptid' to link with Biologic Specimen and Data Repository Information Coordinating Center (BioLINCC) and cohort-specific data.,Administrative
+>>>>>>> origin/main:src/notebooks/results.csv
 66,Body mass index (BMI) (Sleep Heart Health Study Visit One (SHHS1)),Body Mass Index (BMI) at Sleep Heart Health Study Visit One (SHHS1),Anthropometry
 68,Height (Sleep Heart Health Study Visit One (SHHS1)),The SHHS Coordinating Center bottom and top coded this variable using a lower limit of 145 centimeters and an upper limit of 188 centimeters.,Anthropometry
 69,Hip Circumference (Sleep Heart Health Study Visit One (SHHS1)),Hip measurement in centimeters,Anthropometry
 70,Neck Circumference (Sleep Heart Health Study Visit One (SHHS1)),Neck circumference in centimeters,Anthropometry
 77,Waist Circumference (Sleep Heart Health Study Visit One (SHHS1)),Waist measurement in centimeters,Anthropometry
+<<<<<<< HEAD:notebooks/results.csv
+=======
 78,Weight (Sleep Heart Health Study Visit One (SHHS1)),The SHHS Coordinating Center bottom and top coded this variable using a lower limit of 47 kilograms and an upper limit of 126 kilograms.,Anthropometry
+>>>>>>> origin/main:src/notebooks/results.csv
 79,Weight at Blood Pressure (BP) measurement (Sleep Heart Health Study Visit One (SHHS1)),The SHHS Coordinating Center bottom and top coded this variable using a lower limit of 47 kilograms and an upper limit of 126 kilograms.,Anthropometry
 444,Health Interview (Sleep Heart Health Study Visit One (SHHS1)): Aspirin in last 2 weeks,"In last two weeks, did you take any aspirin or aspirin containing meds?",Lifestyle and Behavioral Health/SHHS1
 449,Health Interview (Sleep Heart Health Study Visit One (SHHS1)): cups of coffee on a regular day,"How many cups of regular coffee do you drink on a regular day? (Number of cups of coffee, up to 2 digits)",Lifestyle and Behavioral Health/SHHS1
