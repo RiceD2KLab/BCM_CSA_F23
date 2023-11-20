@@ -67,6 +67,7 @@ def find_best_data(folder_loc, datasets, target):
     model_name = None
     best_mae = 100000
     best_dataset = None
+    results = []
 
     for dataset in tqdm(datasets):
         # Load data
@@ -160,8 +161,33 @@ def find_best_data(folder_loc, datasets, target):
             best_model = model_dt
             model_name = "dt"
             best_dataset = dataset
-    return best_mae, best_model, model_name, best_dataset
+        
+        results.append([dataset, mae_xgb, mae_rf, mae_lr, mae_lasso, mae_ridge, mae_dt])
 
+    results_df = pd.DataFrame(results, columns=['dataset', 'mae_xgb', 'mae_rf', 'mae_lr', 'mae_lasso', 'mae_ridge', 'mae_dt'])
+    results_df = proces_results(results_df)
+
+    return best_mae, best_model, model_name, best_dataset, results_df
+
+def proces_results(results_df):
+    results_df['best'] = results_df.iloc[:, 1:].min(axis=1)
+    results_df = results_df.sort_values(by=['best'])
+    results_df = results_df.reset_index(drop=True)
+    # Define the abbreviation mapping
+    abbreviations = {'Anthropometry': 'Ant',
+                    'Clinical Data': 'Cli',
+                    'Demographics': 'Dem',
+                    'General Health': 'Gen',
+                    'Lifestyle and Behavioral Health': 'Lif',
+                    'Medical History': 'Med',
+                    'Sleep Treatment': 'Tre'}
+
+    # Inverse the abbreviation mapping
+    abbreviations = {v: k for k, v in abbreviations.items()}
+
+    # Substitute the dataset abbreviations in the dataset column of results_df with the abbreviation mapping
+    results_df['dataset'] = [[', '.join([abbreviations.get(part, part) for part in x.split('.')[0].split('_')]) for x in row] for row in results_df['dataset'].str.split(', ')]
+    return results_df
 
 def find_best_data_each_model(folder_loc, datasets, target):
     """GIven datasets and target variable, return the best dataset for each model
