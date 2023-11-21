@@ -161,33 +161,56 @@ def find_best_data(folder_loc, datasets, target):
             best_model = model_dt
             model_name = "dt"
             best_dataset = dataset
-        
+
         results.append([dataset, mae_xgb, mae_rf, mae_lr, mae_lasso, mae_ridge, mae_dt])
 
-    results_df = pd.DataFrame(results, columns=['dataset', 'mae_xgb', 'mae_rf', 'mae_lr', 'mae_lasso', 'mae_ridge', 'mae_dt'])
+    results_df = pd.DataFrame(
+        results,
+        columns=[
+            "dataset",
+            "mae_xgb",
+            "mae_rf",
+            "mae_lr",
+            "mae_lasso",
+            "mae_ridge",
+            "mae_dt",
+        ],
+    )
     results_df = proces_results(results_df)
 
     return best_mae, best_model, model_name, best_dataset, results_df
 
+
 def proces_results(results_df):
-    results_df['best'] = results_df.iloc[:, 1:].min(axis=1)
-    results_df = results_df.sort_values(by=['best'])
+    results_df["best"] = results_df.iloc[:, 1:].min(axis=1)
+    results_df = results_df.sort_values(by=["best"])
     results_df = results_df.reset_index(drop=True)
     # Define the abbreviation mapping
-    abbreviations = {'Anthropometry': 'Ant',
-                    'Clinical Data': 'Cli',
-                    'Demographics': 'Dem',
-                    'General Health': 'Gen',
-                    'Lifestyle and Behavioral Health': 'Lif',
-                    'Medical History': 'Med',
-                    'Sleep Treatment': 'Tre'}
+    abbreviations = {
+        "Anthropometry": "Ant",
+        "Clinical Data": "Cli",
+        "Demographics": "Dem",
+        "General Health": "Gen",
+        "Lifestyle and Behavioral Health": "Lif",
+        "Medical History": "Med",
+        "Sleep Treatment": "Tre",
+    }
 
     # Inverse the abbreviation mapping
     abbreviations = {v: k for k, v in abbreviations.items()}
 
     # Substitute the dataset abbreviations in the dataset column of results_df with the abbreviation mapping
-    results_df['dataset'] = [[', '.join([abbreviations.get(part, part) for part in x.split('.')[0].split('_')]) for x in row] for row in results_df['dataset'].str.split(', ')]
+    results_df["dataset"] = [
+        [
+            ", ".join(
+                [abbreviations.get(part, part) for part in x.split(".")[0].split("_")]
+            )
+            for x in row
+        ]
+        for row in results_df["dataset"].str.split(", ")
+    ]
     return results_df
+
 
 def find_best_data_each_model(folder_loc, datasets, target):
     """GIven datasets and target variable, return the best dataset for each model
@@ -238,3 +261,105 @@ def find_best_data_each_model(folder_loc, datasets, target):
                 best_models[name]["model"] = trained_model
                 best_models[name]["dataset"] = dataset
     return best_models
+
+
+def find_best_data_each_model(folder_loc, datasets, target):
+    """GIven datasets and target variable, return the best dataset for each model
+
+    Args:
+        folder_loc (string): location of folder contianing datasets
+        datasets (array): list of dataset locations within folder
+        target (string): target variable
+    """
+    best_models = {
+        "xgb": {"mae": 100000, "model": None, "dataset": None},
+        "rf": {"mae": 100000, "model": None, "dataset": None},
+        "lr": {"mae": 100000, "model": None, "dataset": None},
+        "lasso": {"mae": 100000, "model": None, "dataset": None},
+        "ridge": {"mae": 100000, "model": None, "dataset": None},
+        "dt": {"mae": 100000, "model": None, "dataset": None},
+    }
+
+    for dataset in tqdm(datasets):
+        # Load data
+        df = pd.read_csv(folder_loc + dataset)
+        features = df.columns.tolist()
+        features.remove(target)
+
+        # Split data
+        X_train, X_test, y_train, y_test, X_val, y_val = split_data(
+            df, features, target
+        )
+
+        # Define a dictionary to store models and their training function
+        models = {
+            "xgb": XGBRegressor(random_state=1),
+            "rf": RandomForestRegressor(random_state=1),
+            "lr": LinearRegression(),
+            "lasso": Lasso(random_state=1),
+            "ridge": Ridge(random_state=1),
+            "dt": DecisionTreeRegressor(random_state=1),
+        }
+
+        # Train and evaluate each model
+        for name, model in models.items():
+            mae, trained_model = train_model(
+                model, X_train, y_train, X_test, y_test, X_val, y_val
+            )
+
+            if mae < best_models[name]["mae"]:
+                best_models[name]["mae"] = mae
+                best_models[name]["model"] = trained_model
+                best_models[name]["dataset"] = dataset
+    return best_models
+
+
+def find_all_mae_each_model(folder_loc, datasets, target):
+    """Collect MAEs for all datasets with all models.
+
+    Args:
+        folder_loc (string): location of folder containing datasets
+        datasets (array): list of dataset locations within folder
+        target (string): target variable
+    """
+    # Dictionary to store MAEs for each model and dataset
+    model_maes = {
+        "xgb": {},
+        "rf": {},
+        "lr": {},
+        "lasso": {},
+        "ridge": {},
+        "dt": {},
+    }
+
+    for dataset in tqdm(datasets):
+        # Load data
+        df = pd.read_csv(folder_loc + dataset)
+        features = df.columns.tolist()
+        features.remove(target)
+
+        # Split data
+        X_train, X_test, y_train, y_test, X_val, y_val = split_data(
+            df, features, target
+        )
+
+        # Dictionary of models
+        models = {
+            "xgb": XGBRegressor(random_state=1),
+            "rf": RandomForestRegressor(random_state=1),
+            "lr": LinearRegression(),
+            "lasso": Lasso(random_state=1),
+            "ridge": Ridge(random_state=1),
+            "dt": DecisionTreeRegressor(random_state=1),
+        }
+
+        # Train and evaluate each model
+        for name, model in models.items():
+            mae, trained_model = train_model(
+                model, X_train, y_train, X_test, y_test, X_val, y_val
+            )
+
+            # Store MAE for each model-dataset combination
+            model_maes[name][dataset] = mae
+
+    return model_maes
