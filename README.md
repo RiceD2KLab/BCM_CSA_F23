@@ -93,6 +93,8 @@ The dataset has been provided in this repository for anyone that would like repl
 
 # TODO: write more detailed instructions & update /src/README.md too.
 
+# TODO: make a demo notebook, write instructions for Google Colab
+
 ### Initial Experiment
 
 As of August 11, 2023, our software APIs usage and data science pipeline is documented in the Jupyter notebook demo_notebook.ipynb. This notebook is intended to demonstrate how to use our software for end-to-end training and evaulation. Note that we have placed a small subsample of data under data/demo_data for use with this notebook. The results shown in demo_notebook.ipynb are not representative of our final products and are meant for demonstration purposes, only. Within src/ we have a directory notebooks which contains individual notebooks that run our entire pipeline on the entire data set and capture our current results. For specific details about these notebooks, please see the source README.
