@@ -1,7 +1,7 @@
-# Rice D2k COMP 449/DSCI 435/DSCI 535 Capstone Spring 2023, Team BCM Central Sleep Apnea
+# Rice D2K COMP 449/DSCI 435/DSCI 535 Capstone Spring 2023, Team BCM Central Sleep Apnea
 
 ## Team Members
-Students:
+Students: Minyu Chen, Jingwen Hu, Liuxiao Kang, Zheran Li, Huailin Tang, Risto Trajanov, Benjamin Zhao
 
 Faculty Mentor: Dr. Arko Barman
 
@@ -55,7 +55,6 @@ BCM_CSA_F23/
 ```
 - `data/` directory contains raw data from the Sleep Heart Health Study and our interim and processed datasets manipulating the raw dataset.
 - `models/` contains python models generated for our objectives: finding cheap features and finding a new threshold for diagnosis.
-- `references/` directory contains data dictionaries, manuals, and all other explanatory materials.
 - `results/` directory contains generated logs from the threshold fine tuning experiments using Hydra. They are sorted into `results/initial_study,` representing our findings from our initial feature selection, and `results/threshold,` representing our final results.
 - `src/` directory contains all our source code.
     - `conf/` contains dynamic configuration files to run [Hydra](https://hydra.cc/docs/intro/) models that compares all our built models for predicting the new diagnosis threshold. The config.yaml sets the default application parameters, while other files like config_threshold.yaml provide specific settings for threshold experiments. For more read this [README.md](./src/conf/README.md)
@@ -87,6 +86,8 @@ Step 4: Install required packages
 Deactivate to base when done! `conda deactivate`
 
 ## Running the software
+
+TODO: make more detailed.
 
 ### Generating results for Initial Experiment
 
