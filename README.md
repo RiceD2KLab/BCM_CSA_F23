@@ -1,5 +1,7 @@
 # Rice D2K COMP 449/DSCI 435/DSCI 535 Capstone Spring 2023, Team BCM Central Sleep Apnea
 
+# TODO: UPDATE /src/notebooks/README.md when code is done
+
 ## Team Members
 Students: Minyu Chen, Jingwen Hu, Liuxiao Kang, Zheran Li, Huailin Tang, Risto Trajanov, Benjamin Zhao
 
@@ -87,7 +89,13 @@ Deactivate to base when done! `conda deactivate`
 
 ## Running the software
 
-TODO: make more detailed.
+The dataset has been provided in this repository for anyone that would like replicate our results (in `/data/raw`). If you do not have stand alone hardware with a minimum of 26 GB system RAM and a dedicated GPU with a minimum of 16 GB of vRAM, we recommend using Google Colab to upload and run the jupyter notebooks.
+
+# TODO: write more detailed instructions & update /src/README.md too.
+
+### Initial Experiment
+
+As of August 11, 2023, our software APIs usage and data science pipeline is documented in the Jupyter notebook demo_notebook.ipynb. This notebook is intended to demonstrate how to use our software for end-to-end training and evaulation. Note that we have placed a small subsample of data under data/demo_data for use with this notebook. The results shown in demo_notebook.ipynb are not representative of our final products and are meant for demonstration purposes, only. Within src/ we have a directory notebooks which contains individual notebooks that run our entire pipeline on the entire data set and capture our current results. For specific details about these notebooks, please see the source README.
 
 ### Generating results for Initial Experiment
 
