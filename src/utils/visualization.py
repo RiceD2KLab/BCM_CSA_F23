@@ -170,3 +170,83 @@ def model_mae_dataset_table(dict, table_type):
     )
 
     return styled_table
+
+
+def model_mae_dataset_table_all(model_maes, table_type):
+    # Mapping for cheap feature names
+    cheap_feature = {
+        "Ant": "Anthropometry",
+        "Cli": "Clinical Data",
+        "Dem": "Demographics",
+        "Gen": "General Health",
+        "Lif": "Lifestyle and Behavioral Health",
+        "Med": "Medical History",
+        "Tre": "Sleep Treatment",
+    }
+
+    # Mapping for feature selection names
+    feature_selection = {
+        "mutual_information_ahi_c0h4a.csv": "Mutual Information",
+        "backward_selection_AIC_ahi_c0h4a.csv": "Backward Selection",
+        "forward_selection_AIC_ahi_c0h4a.csv": "Forward Selection",
+        "forward_selection_BIC_ahi_c0h4a.csv": "Forward Selection",
+        "random_forest_ahi_c0h4a.csv": "Random Forest",
+        "decision_tree_ahi_c0h4a.csv": "Decision Tree",
+    }
+
+    # Preparing a list to store all rows of the table
+    rows = []
+
+    # Iterating over each model and its MAEs
+    for model, datasets in model_maes.items():
+        for dataset, mae in datasets.items():
+            # Determine dataset name based on table_type
+            if table_type == "cheap_feature":
+                dataset_name = ", ".join(
+                    [
+                        cheap_feature.get(item, item)
+                        for item in dataset.replace(".csv", "").split("_")
+                    ]
+                )
+            elif table_type == "feature_selection":
+                dataset_name = feature_selection.get(dataset, dataset)
+
+            # Add a row for each model-dataset-MAE combination
+            rows.append([model, mae, dataset_name])
+
+    # Creating DataFrame from the rows
+    df = pd.DataFrame(rows, columns=["Model", "MAE", "Dataset"])
+
+    # Replace model abbreviations
+    df["Model"] = df["Model"].replace(
+        {
+            "xgb": "XGBoost",
+            "rf": "Random Forest",
+            "lr": "Linear Regression",
+            "lasso": "Lasso Regression",
+            "ridge": "Ridge Regression",
+            "dt": "Decision Tree",
+        }
+    )
+
+    # Find the row with the minimum MAE
+    min_mae_row = df["MAE"].idxmin()
+
+    # Function to highlight the row with the minimum MAE
+    def highlight_min_row(row):
+        if row.name == min_mae_row:
+            return ["background-color: green"] * len(row)
+        return [""] * len(row)
+
+    # Use Pandas styling to create a table visualization and highlight the row with the lowest MAE
+    styled_table = df.style.apply(highlight_min_row, axis=1).set_table_styles(
+        [
+            {
+                "selector": "th",
+                "props": [("font-size", "12pt"), ("text-align", "center")],
+            },
+            {"selector": "td", "props": [("text-align", "center")]},
+        ]
+    )
+
+    return styled_table
