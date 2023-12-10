@@ -1,30 +1,9 @@
-import pandas as pd
 import numpy as np
-from sklearn.impute import KNNImputer
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.feature_selection import mutual_info_regression
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import StandardScaler
 import statsmodels.api as sm
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-from sklearn.datasets import make_classification
 from mrmr import mrmr_classif
-
-def write_to_csv(dataset, filepath, name):
-  """Writes a dataset to a given file at a given file path
-  
-  Args:
-    dataset (pd.DataFrame): input dataset
-    filepath (string): prefix file path (ends with /)
-    name (string): csv file name
-  
-  Returns:
-    None
-  """
-  csv_name = filepath + name + ".csv"
-  dataset.to_csv(csv_name, index=False)
 
 def write_features_to_csv(df, shhs1, model_name, target_vars, filepath, model_importances=None, model_features=None):
   """Takes important features from given model and writes data to a new csv
@@ -47,7 +26,8 @@ def write_features_to_csv(df, shhs1, model_name, target_vars, filepath, model_im
     model_dataset.loc[:, var] = shhs1[var]
 
   # write important features to CSV file
-  write_to_csv(model_dataset, filepath, model_name.replace(" ", "_") + "_" + target_vars[0])
+  csv_name = filepath + model_name.replace(" ", "_") + "_" + target_vars[0] + ".csv"
+  model_dataset.to_csv(csv_name, index=False)
 
   return len(model_features)
 
