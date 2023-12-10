@@ -1,0 +1,184 @@
+File,Model,F1 Test,F1 Validation,Confusion Matrix,False Negative
+ahic0h4_threshold_1.csv,"LogisticRegression(C=0.01, class_weight='balanced', random_state=1)",0.6337555008156128,0.6562369745147076,"[[834 463]
+ [491 817]]",463
+ahic0h4_threshold_1.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=90,
+                       min_samples_split=5, n_estimators=292, random_state=1)",0.9915544784801564,0.982721714865781,"[[1296    1]
+ [  21 1287]]",1
+ahic0h4_threshold_1.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_leaf=2, random_state=1)",0.9669867005180315,0.9572264216682388,"[[1256   41]
+ [  45 1263]]",41
+ahic0h4_threshold_1.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.9, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.1, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=30, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=827, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9900190761944685,0.986837116677043,"[[1292    5]
+ [  21 1287]]",5
+ahic0h4_threshold_3.csv,"LogisticRegression(C=0.01, class_weight='balanced', random_state=1)",0.644027467287018,0.6422855201091437,"[[564 334]
+ [308 598]]",334
+ahic0h4_threshold_3.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=90,
+                       min_samples_split=5, n_estimators=292, random_state=1)",0.9839235795666507,0.9881235154394299,"[[893   5]
+ [ 24 882]]",5
+ahic0h4_threshold_3.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=80, min_samples_leaf=4, random_state=1)",0.961749864640758,0.9536592250661017,"[[859  39]
+ [ 30 876]]",39
+ahic0h4_threshold_3.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.01, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=70, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=758, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9811522520586508,0.9869350725472208,"[[889   9]
+ [ 25 881]]",9
+ahic0h4_threshold_2.csv,"LogisticRegression(C=10, class_weight='balanced', random_state=1)",0.6692522863619434,0.6893812412861063,"[[664 388]
+ [319 770]]",388
+ahic0h4_threshold_2.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=90,
+                       min_samples_split=5, n_estimators=292, random_state=1)",0.989258111037167,0.9859878117660991,"[[1052    0]
+ [  23 1066]]",0
+ahic0h4_threshold_2.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=90, min_samples_leaf=4, min_samples_split=10,
+                       random_state=1)",0.9673059393919365,0.9589635659443075,"[[1019   33]
+ [  37 1052]]",33
+ahic0h4_threshold_2.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.8, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=20, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=413, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9906592555570748,0.9879895529423707,"[[1050    2]
+ [  18 1071]]",2
+ahic0h4_threshold_6.csv,"LogisticRegression(C=0.001, class_weight='balanced', random_state=1)",0.6363045595736901,0.6358391746308115,"[[372 207]
+ [204 347]]",207
+ahic0h4_threshold_6.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=76,
+                       min_samples_split=5, n_estimators=348, random_state=1)",0.9876093765263676,0.9810332903453547,"[[574   5]
+ [  9 542]]",5
+ahic0h4_threshold_6.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_split=10, random_state=1)",0.9557555405314594,0.954474317586272,"[[552  27]
+ [ 23 528]]",27
+ahic0h4_threshold_6.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.5, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.05, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=90, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=304, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9876093765263676,0.9810309656609465,"[[574   5]
+ [  9 542]]",5
+ahic0h4_threshold_7.csv,"LogisticRegression(C=0.001, class_weight='balanced', random_state=1)",0.6272032846150837,0.6214696012888589,"[[321 184]
+ [181 293]]",184
+ahic0h4_threshold_7.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=28,
+                       min_samples_leaf=2, min_samples_split=5,
+                       n_estimators=762, random_state=1)",0.9856935654599682,0.9868742931334497,"[[503   2]
+ [ 12 462]]",2
+ahic0h4_threshold_7.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_split=10, random_state=1)",0.9571095566503875,0.9584045624958738,"[[475  30]
+ [ 12 462]]",30
+ahic0h4_threshold_7.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=100, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9846739843799114,0.9846863821766707,"[[501   4]
+ [ 11 463]]",4
+ahic0h4_threshold_5.csv,"LogisticRegression(C=0.1, class_weight='balanced', random_state=1)",0.6415601224183779,0.680426959306046,"[[415 244]
+ [228 430]]",244
+ahic0h4_threshold_5.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=76,
+                       min_samples_split=5, n_estimators=348, random_state=1)",0.9848126051814976,0.978866707587853,"[[655   4]
+ [ 16 642]]",4
+ahic0h4_threshold_5.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_leaf=2, random_state=1)",0.9612721432630285,0.9414491561674068,"[[627  32]
+ [ 19 639]]",32
+ahic0h4_threshold_5.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.5, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=40, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=244, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9848126051814976,0.978866707587853,"[[655   4]
+ [ 16 642]]",4
+ahic0h4_threshold_4.csv,"LogisticRegression(C=0.001, class_weight='balanced', random_state=1)",0.6703558421619421,0.6825424014298187,"[[525 251]
+ [254 502]]",251
+ahic0h4_threshold_4.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=90,
+                       min_samples_leaf=2, min_samples_split=5,
+                       n_estimators=666, random_state=1)",0.9862899215014008,0.9888129010348964,"[[772   4]
+ [ 17 739]]",4
+ahic0h4_threshold_4.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_split=10, random_state=1)",0.954962735407551,0.9509813472167079,"[[737  39]
+ [ 30 726]]",39
+ahic0h4_threshold_4.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.9, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.2, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=60, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=260, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9849829193383401,0.9874135753870852,"[[773   3]
+ [ 20 736]]",3
+ahic0h4_threshold_9.csv,"LogisticRegression(C=100, class_weight='balanced', random_state=1)",0.6620524770014943,0.6353739503029893,"[[232 130]
+ [122 262]]",130
+ahic0h4_threshold_9.csv,"RandomForestClassifier(class_weight='balanced', max_depth=33, n_estimators=786,
+                       random_state=1)",0.9839174475546314,0.9856289612203245,"[[360   2]
+ [ 10 374]]",2
+ahic0h4_threshold_9.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_split=10, random_state=1)",0.9504129308871666,0.9683973636651324,"[[349  13]
+ [ 24 360]]",13
+ahic0h4_threshold_9.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.01, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=70, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=758, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9785559802931276,0.988500397407679,"[[357   5]
+ [ 11 373]]",5
+ahic0h4_threshold_8.csv,"LogisticRegression(C=0.1, class_weight='balanced', random_state=1)",0.6417693392746626,0.5798377291432846,"[[250 172]
+ [131 295]]",172
+ahic0h4_threshold_8.csv,"RandomForestClassifier(bootstrap=False, class_weight='balanced', max_depth=90,
+                       min_samples_split=5, n_estimators=292, random_state=1)",0.9775936853017689,0.9823056525279745,"[[416   6]
+ [ 13 413]]",6
+ahic0h4_threshold_8.csv,"DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=50, min_samples_leaf=2, random_state=1)",0.9575471698113207,0.9621000840266749,"[[404  18]
+ [ 18 408]]",18
+ahic0h4_threshold_8.csv,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.8, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.3, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=20, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=413, n_jobs=None,
+              num_parallel_tree=None, random_state=1, ...)",0.9775944330960119,0.9772687958987907,"[[414   8]
+ [ 11 415]]",8

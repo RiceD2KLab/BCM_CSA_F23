@@ -3,6 +3,23 @@ import re
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
+from sklearn.impute import KNNImputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.metrics import confusion_matrix
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import f1_score
+from imblearn.over_sampling import SMOTE
+from xgboost import XGBClassifier
+import matplotlib.pyplot as plt
+import shap
+print("hi")
 
 # Function to extract information from the log file
 def extract_log(log_file):
@@ -88,9 +105,10 @@ def create_heatmap(data, title, filename):
 # With this function, we extract all the variables containing the cheapest features and ahi_c0h4 along with the target variable.
 # Then we impute the data
 # The function will return a dataframe with the imputed data
-def read_cheap_features(path1, target):
-    shhs1 = pd.read_csv('shhs1-dataset-0.20.0 (1).csv', encoding='cp1252', engine='python')
-    var_dict = pd.read_csv('shhs-data-dictionary-0.20.0-variables.csv', encoding='cp1252', engine='python')
+def read_cheap_features(path1, target, pd):
+    
+    shhs1 = pd.read_csv('../../data/raw/shhs1-dataset-0.20.0.csv', encoding='cp1252', engine='python')
+    var_dict = pd.read_csv('../../data/raw/shhs-data-dictionary-0.20.0-variables.csv', encoding='cp1252', engine='python')
     sleep_monitoring_col = var_dict[var_dict['folder'].str.contains(r'sleep monitoring', case=False, na=False)]['id']
     x = shhs1.drop(columns=['ahi_c0h4a', 'pptidr'])
     for col in sleep_monitoring_col:
@@ -122,8 +140,11 @@ def set_threshold(df):
         temp['ahi_c0h4'] = temp['ahi_c0h4'].apply(lambda x: 0 if x < threshold else 1)
         temp['hf15'] = temp['hf15'].apply(lambda x: 1 if x == 1 else 0)
         selected_data = temp[(temp['ahi_c0h4'] == 1)]
-        #output_path = '../../data/processed/threshold2/'
-        output_path = 'ProcessedData4/'
+        
+        output_path = '../../data/processed/threshold2/'
+        if os.path.isdir(output_path) == False:
+            os.mkdir(output_path)
+        #output_path = 'ProcessedData4/'
         output_name = 'ahic0h4'+'_threshold_' + str(threshold) + '.csv'
         selected_data.to_csv(output_path + output_name, index=False)
     return 'completed'
@@ -301,7 +322,7 @@ def find_threshold(path):
     return best_dataset, best_model, results
             
 def feature_importance(dataset, model_res):
-    path = 'ProcessedData4/' + dataset
+    path = '../../data/processed/threshold2/' + dataset
     df = pd.read_csv(path)
     df['hf15'] = df['hf15'].astype(int)
     features = df.columns.tolist()
@@ -318,7 +339,7 @@ def feature_importance(dataset, model_res):
     return feature_importances
 
 def feature_importance_SHAP(dataset, model_res):
-    path = 'ProcessedData4/' + dataset
+    path = '../../data/processed/threshold2/' + dataset
     df = pd.read_csv(path)
     df['hf15'] = df['hf15'].astype(int)
     features = df.columns.tolist()
