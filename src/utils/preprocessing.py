@@ -109,3 +109,12 @@ def generate_subset_dataset(features_df, subset, shhs1, cahi, abbreviations, fil
     dataset_name = "_".join(dataset_name)
 
     dataset.to_csv(f"{filepath}{dataset_name}.csv", index=False)
+
+def convert_to_int(column):
+    if column.dtype == float:
+        return column.round().astype(int)
+    elif column.dtype == int:
+        return column
+    else:
+        # Optional: Handle non-numeric columns, e.g., by returning them unchanged
+        return column
