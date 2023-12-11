@@ -70,6 +70,8 @@ def find_best_data(folder_loc, datasets, target):
     results = []
 
     for dataset in tqdm(datasets):
+        print('best dataset, current', best_dataset, dataset)
+
         # Load data
         df = pd.read_csv(folder_loc + dataset)
 
@@ -176,12 +178,11 @@ def find_best_data(folder_loc, datasets, target):
             "mae_dt",
         ],
     )
-    results_df = proces_results(results_df)
-
+    results_df = process_results(results_df)
     return best_mae, best_model, model_name, best_dataset, results_df
 
 
-def proces_results(results_df):
+def process_results(results_df):
     results_df["best"] = results_df.iloc[:, 1:].min(axis=1)
     results_df = results_df.sort_values(by=["best"])
     results_df = results_df.reset_index(drop=True)

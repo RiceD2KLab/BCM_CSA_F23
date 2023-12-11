@@ -69,6 +69,19 @@ def write_ahi_to_csv(new_df, threshold, threshold_2, filepath, dataset):
 
 
 def generate_subset_dataset(features_df, subset, shhs1, cahi, abbreviations, filepath):
+    """Given a subset category, find the subset data and write it to a file.
+
+    Args:
+        features_df (pd.DataFrame): the input dataset
+        subset (array): the input generated subset
+        shhs1 (pd.Dataframe): the data
+        cahi (int): cahi to predict with
+        abbreviations (array): array of names of the cheap features
+        filepath (str): filepath to write csv to
+
+    Returns:
+        None
+    """
     cheap_features_labels = features_df[
         features_df["folder"].str.startswith(tuple(subset))
     ]["id"].values
@@ -109,12 +122,3 @@ def generate_subset_dataset(features_df, subset, shhs1, cahi, abbreviations, fil
     dataset_name = "_".join(dataset_name)
 
     dataset.to_csv(f"{filepath}{dataset_name}.csv", index=False)
-
-def convert_to_int(column):
-    if column.dtype == float:
-        return column.round().astype(int)
-    elif column.dtype == int:
-        return column
-    else:
-        # Optional: Handle non-numeric columns, e.g., by returning them unchanged
-        return column
