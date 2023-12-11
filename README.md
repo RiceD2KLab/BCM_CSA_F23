@@ -89,11 +89,9 @@ Deactivate to base when done! `conda deactivate`
 
 ## Running the software
 
+Our software APIs usage and data science pipeline is documented in the demo_notebook Jupyter notebook file. This notebook is intended to demonstrate how to use our software for end-to-end training and evaulation. Within src/ we have a directory notebooks which contains individual notebooks that run our entire pipeline on the entire data set and capture our current results. For specific details about these notebooks, please see the source README.
+
 The dataset has been provided in this repository for anyone that would like replicate our results (in `/data/raw`). If you do not have stand alone hardware with a minimum of 26 GB system RAM and a dedicated GPU with a minimum of 16 GB of vRAM, we recommend using Google Colab to upload and run the jupyter notebooks.
-
-# TODO: write more detailed instructions & update /src/README.md too.
-
-# TODO: make a demo notebook, write instructions for Google Colab
 
 ### Initial Experiment
 
