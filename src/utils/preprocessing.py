@@ -1,4 +1,3 @@
-# 3.0
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import KNNImputer
 import pandas as pd
@@ -28,7 +27,6 @@ def subsets(nums):
 
     rec(nums)
     rez = list(rez)
-    # rez.append([])
     return rez
 
 

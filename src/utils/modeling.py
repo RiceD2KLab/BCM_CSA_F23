@@ -1,9 +1,7 @@
-# 4.1
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from tqdm import tqdm
 from xgboost import XGBRegressor
-import os
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.tree import DecisionTreeRegressor
@@ -56,7 +54,7 @@ def train_model(model, X_train, y_train, X_test, y_test, X_val, y_val):
 
 
 def find_best_data(folder_loc, datasets, target):
-    """GIven datasets, return the best dataset and model for some target variable
+    """Given datasets, return the best dataset and model for some target variable
 
     Args:
         folder_loc (string): location of folder contianing datasets
@@ -183,6 +181,15 @@ def find_best_data(folder_loc, datasets, target):
 
 
 def process_results(results_df):
+    """Given a dataframe of results, "process" them by converting the category names 
+    into their abbreviations and return the modified DF
+
+    Args:
+        results_df (pd.DataFrame): the input dataset
+
+    Returns:
+        results_df (pd.DataFrame): the modified dataset
+    """
     results_df["best"] = results_df.iloc[:, 1:].min(axis=1)
     results_df = results_df.sort_values(by=["best"])
     results_df = results_df.reset_index(drop=True)
@@ -214,7 +221,7 @@ def process_results(results_df):
 
 
 def find_best_data_each_model(folder_loc, datasets, target):
-    """GIven datasets and target variable, return the best dataset for each model
+    """Given datasets and target variable, return the best dataset for each model
 
     Args:
         folder_loc (string): location of folder contianing datasets
@@ -265,7 +272,7 @@ def find_best_data_each_model(folder_loc, datasets, target):
 
 
 def find_best_data_each_model(folder_loc, datasets, target):
-    """GIven datasets and target variable, return the best dataset for each model
+    """Given datasets and target variable, return the best dataset for each model
 
     Args:
         folder_loc (string): location of folder contianing datasets
