@@ -1,20 +1,21 @@
-# Methods
+# SRC ReadMe
 
 In this folder is the core of our analysis here we explore the two main objectives of our study: (1) Finding cost-effective features for predicting CSA and (2) Finding a new threshold for diagnosing CSA.
 
-## Generating results for Initial Experiment
-`python classify.py --multirun dataset=shhs1 model=logistic_regression,svc,random_forest target=ahi_a0h3a,ahi_a0h4`
+You will find multiple directories that allowed us to conduct our study
 
-`python regression.py --multirun dataset=shhs1 model=linear_regression,ridge,lasso,knn,svr target=ahi_a0h3a,ahi_a0h4`
+## Conf
 
-## Generating results for the Threshold experiments
+This folder contains the configurations we used for our study to allow us to test and run different datasets with different models
 
-`python3 ./src/models/find_threshold.py --multirun dataset=feature_selection_dt,feature_selection_mi,feature_selection_rf model=logistic_regression,svc,random_forest,decision_tree,xgboost target=hf15 threshold_cahi=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5,threshold_6,threshold_7,threshold_8,threshold_9 threshold_c_o=threshold_1,threshold_2,threshold_3,threshold_4,threshold_5`
+## Models
 
-## Results
+This folder contains the models we used
 
+## Notebooks
 
+This folder contains the jupyter notebooks we used to conduct our study.
 
 ## Utils
 
-This folder contains utility functions used in the notebooks.
+This folder contains utility functions used in the previously mentioned notebooks.
