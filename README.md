@@ -33,8 +33,6 @@ BCM_CSA_F23/
 │   ├── threshold           <- Trained models during finding the Threshold for Central Sleep Apnea diagnosis experiments.
 │   └── cheap_features      <- Trained models during finding cheap features to predict Central Sleep Apnea Index.
 │
-├── references              <- Data dictionaries, manuals, and all other explanatory materials.
-│
 ├── results                 <- Generated logs from the threshold fine tuning experiments using Hydra.
 │   ├── intial_study
 │   └── threshold  
