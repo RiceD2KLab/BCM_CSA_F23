@@ -97,6 +97,16 @@ def plot_bar(ax, data_col, title, bins, bin_labels, colors):
 
 
 def model_mae_dataset_table(dict, table_type):
+    """Formats MAE dataset table by replacing abbreviations/column names with
+    their actual meanings
+
+    Args:
+        dict (Map): a map of the input dataset
+        table_type (string): represents table type
+    
+    Returns:
+        styled_table (pd.DataFrame): the formatted dataset in DataFrame format
+    """
     # cheap feature name mapping
     cheap_feature = {
         "Ant": "Anthropometry",
@@ -173,6 +183,16 @@ def model_mae_dataset_table(dict, table_type):
 
 
 def model_mae_dataset_table_all(model_maes, table_type):
+    """Formats MAE dataset table by replacing abbreviations/column names with
+    their actual meanings
+
+    Args:
+        dict (Map): a map of the input dataset
+        table_type (string): represents table type
+    
+    Returns:
+        styled_table (pd.DataFrame): the formatted dataset in DataFrame format
+    """
     # Mapping for cheap feature names
     cheap_feature = {
         "Ant": "Anthropometry",
